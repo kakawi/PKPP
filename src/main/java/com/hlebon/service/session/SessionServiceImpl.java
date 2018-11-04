@@ -2,7 +2,7 @@ package com.hlebon.service.session;
 
 import com.hlebon.repository.dao.SessionDao;
 import com.hlebon.repository.entity.SessionEntity;
-import com.hlebon.session.SessionModalDto;
+import com.hlebon.gui.session.SessionModalDto;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;

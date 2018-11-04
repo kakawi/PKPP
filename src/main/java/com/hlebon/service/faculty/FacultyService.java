@@ -1,6 +1,6 @@
 package com.hlebon.service.faculty;
 
-import com.hlebon.faculty.FacultyModalDto;
+import com.hlebon.gui.faculty.FacultyModalDto;
 
 import java.util.List;
 

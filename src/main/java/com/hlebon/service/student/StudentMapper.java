@@ -1,7 +1,7 @@
 package com.hlebon.service.student;
 
 import com.hlebon.repository.entity.StudentEntity;
-import com.hlebon.student.StudentModalDto;
+import com.hlebon.gui.student.StudentModalDto;
 import org.mapstruct.Mapper;
 
 @Mapper

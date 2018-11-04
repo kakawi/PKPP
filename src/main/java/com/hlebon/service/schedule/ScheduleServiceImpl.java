@@ -1,6 +1,6 @@
 package com.hlebon.service.schedule;
 
-import com.hlebon.schedule.ScheduleModalDto;
+import com.hlebon.gui.schedule.ScheduleModalDto;
 import com.hlebon.repository.dao.ScheduleDao;
 import com.hlebon.repository.entity.ScheduleEntity;
 import org.mapstruct.factory.Mappers;

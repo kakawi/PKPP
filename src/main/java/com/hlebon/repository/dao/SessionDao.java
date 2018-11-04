@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import static com.hlebon.Main.ENTITY_MANAGER_FACTORY;
+import static com.hlebon.gui.Main.ENTITY_MANAGER_FACTORY;
 
 public class SessionDao {
 

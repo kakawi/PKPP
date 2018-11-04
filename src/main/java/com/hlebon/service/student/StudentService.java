@@ -1,6 +1,6 @@
 package com.hlebon.service.student;
 
-import com.hlebon.student.StudentModalDto;
+import com.hlebon.gui.student.StudentModalDto;
 
 import java.util.List;
 

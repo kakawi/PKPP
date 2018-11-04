@@ -1,6 +1,6 @@
 package com.hlebon.service.setOfGroup;
 
-import com.hlebon.setOfGroup.SetOfGroupModalDto;
+import com.hlebon.gui.setOfGroup.SetOfGroupModalDto;
 
 import java.util.List;
 

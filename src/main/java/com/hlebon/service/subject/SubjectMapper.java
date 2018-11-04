@@ -1,7 +1,7 @@
 package com.hlebon.service.subject;
 
 import com.hlebon.repository.entity.SubjectEntity;
-import com.hlebon.subject.SubjectModalDto;
+import com.hlebon.gui.subject.SubjectModalDto;
 import org.mapstruct.Mapper;
 
 @Mapper

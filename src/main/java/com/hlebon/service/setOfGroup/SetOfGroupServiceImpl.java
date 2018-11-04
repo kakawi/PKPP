@@ -2,7 +2,7 @@ package com.hlebon.service.setOfGroup;
 
 import com.hlebon.repository.dao.SetOfGroupDao;
 import com.hlebon.repository.entity.SetOfGroupEntity;
-import com.hlebon.setOfGroup.SetOfGroupModalDto;
+import com.hlebon.gui.setOfGroup.SetOfGroupModalDto;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;

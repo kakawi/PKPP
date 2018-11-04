@@ -1,7 +1,7 @@
 package com.hlebon.service.schedule;
 
 import com.hlebon.repository.entity.ScheduleEntity;
-import com.hlebon.schedule.ScheduleModalDto;
+import com.hlebon.gui.schedule.ScheduleModalDto;
 import org.mapstruct.Mapper;
 
 @Mapper

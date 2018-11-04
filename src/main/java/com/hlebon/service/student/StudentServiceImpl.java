@@ -2,12 +2,10 @@ package com.hlebon.service.student;
 
 import com.hlebon.repository.dao.StudentDao;
 import com.hlebon.repository.entity.StudentEntity;
-import com.hlebon.schedule.ScheduleModalDto;
-import com.hlebon.student.StudentModalDto;
+import com.hlebon.gui.student.StudentModalDto;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class StudentServiceImpl implements StudentService {

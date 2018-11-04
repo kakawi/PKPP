@@ -1,7 +1,7 @@
 package com.hlebon.service.speciality;
 
 import com.hlebon.repository.entity.SpecialityEntity;
-import com.hlebon.speciality.SpecialityModalDto;
+import com.hlebon.gui.speciality.SpecialityModalDto;
 import org.mapstruct.Mapper;
 
 @Mapper

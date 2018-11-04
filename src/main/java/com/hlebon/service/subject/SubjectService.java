@@ -1,6 +1,6 @@
 package com.hlebon.service.subject;
 
-import com.hlebon.subject.SubjectModalDto;
+import com.hlebon.gui.subject.SubjectModalDto;
 
 import java.util.Collection;
 import java.util.List;

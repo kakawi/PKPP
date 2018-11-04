@@ -1,6 +1,6 @@
 package com.hlebon.service.studentMark;
 
-import com.hlebon.studentMark.StudentMarkModalDto;
+import com.hlebon.gui.studentMark.StudentMarkModalDto;
 import com.hlebon.repository.dao.StudentMarkDao;
 import com.hlebon.repository.entity.StudentMarkEntity;
 import org.mapstruct.factory.Mappers;

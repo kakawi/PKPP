@@ -1,6 +1,6 @@
 package com.hlebon.service.speciality;
 
-import com.hlebon.speciality.SpecialityModalDto;
+import com.hlebon.gui.speciality.SpecialityModalDto;
 
 import java.util.List;
 

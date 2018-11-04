@@ -13,7 +13,7 @@
         prefWidth="600.0"
         xmlns="http://javafx.com/javafx/8"
         xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="com.hlebon.speciality.SpecialityController"
+        fx:controller="com.hlebon.gui.speciality.SpecialityController"
 >
     <children>
         <HBox prefHeight="100.0" prefWidth="200.0">

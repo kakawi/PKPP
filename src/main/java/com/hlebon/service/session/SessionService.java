@@ -1,6 +1,6 @@
 package com.hlebon.service.session;
 
-import com.hlebon.session.SessionModalDto;
+import com.hlebon.gui.session.SessionModalDto;
 
 import java.util.Collection;
 import java.util.List;

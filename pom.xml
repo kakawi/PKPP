@@ -59,7 +59,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.hlebon.Main</mainClass>
+                            <mainClass>com.hlebon.gui.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

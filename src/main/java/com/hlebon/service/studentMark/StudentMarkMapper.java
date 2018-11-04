@@ -1,7 +1,7 @@
 package com.hlebon.service.studentMark;
 
 import com.hlebon.repository.entity.StudentMarkEntity;
-import com.hlebon.studentMark.StudentMarkModalDto;
+import com.hlebon.gui.studentMark.StudentMarkModalDto;
 import org.mapstruct.Mapper;
 
 @Mapper

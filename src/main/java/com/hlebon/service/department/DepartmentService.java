@@ -1,6 +1,6 @@
 package com.hlebon.service.department;
 
-import com.hlebon.department.DepartmentModalDto;
+import com.hlebon.gui.department.DepartmentModalDto;
 
 import java.util.List;
 

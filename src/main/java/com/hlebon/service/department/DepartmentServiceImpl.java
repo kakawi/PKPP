@@ -1,6 +1,6 @@
 package com.hlebon.service.department;
 
-import com.hlebon.department.DepartmentModalDto;
+import com.hlebon.gui.department.DepartmentModalDto;
 import com.hlebon.repository.dao.DepartmentDao;
 import com.hlebon.repository.entity.DepartmentEntity;
 import org.mapstruct.factory.Mappers;

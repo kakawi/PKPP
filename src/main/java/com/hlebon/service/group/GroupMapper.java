@@ -1,6 +1,6 @@
 package com.hlebon.service.group;
 
-import com.hlebon.group.GroupModalDto;
+import com.hlebon.gui.group.GroupModalDto;
 import com.hlebon.repository.entity.GroupEntity;
 import org.mapstruct.Mapper;
 

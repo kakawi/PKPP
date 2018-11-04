@@ -2,7 +2,7 @@ package com.hlebon.service.subject;
 
 import com.hlebon.repository.dao.SubjectDao;
 import com.hlebon.repository.entity.SubjectEntity;
-import com.hlebon.subject.SubjectModalDto;
+import com.hlebon.gui.subject.SubjectModalDto;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;

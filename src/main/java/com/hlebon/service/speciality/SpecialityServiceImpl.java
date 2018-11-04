@@ -2,7 +2,7 @@ package com.hlebon.service.speciality;
 
 import com.hlebon.repository.dao.SpecialityDao;
 import com.hlebon.repository.entity.SpecialityEntity;
-import com.hlebon.speciality.SpecialityModalDto;
+import com.hlebon.gui.speciality.SpecialityModalDto;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;
