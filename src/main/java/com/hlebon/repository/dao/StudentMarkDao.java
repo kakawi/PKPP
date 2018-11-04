@@ -1,6 +1,6 @@
 package com.hlebon.repository.dao;
 
-import com.hlebon.repository.entity.GroupEntity;
+import com.hlebon.repository.entity.StudentMarkEntity;
 import com.hlebon.repository.exception.DaoException;
 
 import javax.persistence.EntityManager;
@@ -10,10 +10,10 @@ import java.util.List;
 
 import static com.hlebon.Main.ENTITY_MANAGER_FACTORY;
 
-public class GroupDao {
+public class StudentMarkDao {
 
-    public List<GroupEntity> getAll() {
-        List<GroupEntity> groups = Collections.emptyList();
+    public List<StudentMarkEntity> getAll() {
+        List<StudentMarkEntity> studentMarks = Collections.emptyList();
 
         EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
         EntityTransaction transaction = null;
@@ -22,8 +22,8 @@ public class GroupDao {
             transaction = manager.getTransaction();
             transaction.begin();
 
-            groups = manager
-                    .createQuery("SELECT s FROM GroupEntity s", GroupEntity.class)
+            studentMarks = manager
+                    .createQuery("SELECT s FROM StudentMarkEntity s", StudentMarkEntity.class)
                     .getResultList();
 
             transaction.commit();
@@ -36,12 +36,10 @@ public class GroupDao {
             manager.close();
         }
 
-        return groups;
+        return studentMarks;
     }
 
-    public List<GroupEntity> getBySetOfGroupId(long setOfGroupId) {
-        List<GroupEntity> groups = Collections.emptyList();
-
+    public void save(StudentMarkEntity studentMarkEntity) {
         EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
         EntityTransaction transaction = null;
 
@@ -49,33 +47,7 @@ public class GroupDao {
             transaction = manager.getTransaction();
             transaction.begin();
 
-            groups = manager
-                    .createQuery("SELECT s FROM GroupEntity s where s.setOfGroup.id = :setOfGroupId", GroupEntity.class)
-                    .setParameter("setOfGroupId", setOfGroupId)
-                    .getResultList();
-
-            transaction.commit();
-        } catch (Exception ex) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            throw new DaoException(ex);
-        } finally {
-            manager.close();
-        }
-
-        return groups;
-    }
-
-    public void save(GroupEntity groupEntity) {
-        EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
-        EntityTransaction transaction = null;
-
-        try {
-            transaction = manager.getTransaction();
-            transaction.begin();
-
-            manager.persist(groupEntity);
+            manager.persist(studentMarkEntity);
 
             transaction.commit();
         } catch (Exception ex) {
@@ -88,7 +60,7 @@ public class GroupDao {
         }
     }
 
-    public void update(GroupEntity groupEntity) {
+    public void update(StudentMarkEntity studentMarkEntity) {
         EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
         EntityTransaction transaction = null;
 
@@ -96,7 +68,7 @@ public class GroupDao {
             transaction = manager.getTransaction();
             transaction.begin();
 
-            manager.merge(groupEntity);
+            manager.merge(studentMarkEntity);
 
             transaction.commit();
         } catch (Exception ex) {
@@ -109,7 +81,7 @@ public class GroupDao {
         }
     }
 
-    public void delete(long groupId) {
+    public void delete(long studentMarkId) {
         EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
         EntityTransaction transaction = null;
 
@@ -117,8 +89,9 @@ public class GroupDao {
             transaction = manager.getTransaction();
             transaction.begin();
 
-            GroupEntity groupEntity = manager.find(GroupEntity.class, groupId);
-            manager.remove(groupEntity);
+            StudentMarkEntity studentMarkEntity = manager
+                    .find(StudentMarkEntity.class, studentMarkId);
+            manager.remove(studentMarkEntity);
 
             transaction.commit();
         } catch (Exception ex) {

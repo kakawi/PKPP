@@ -6,16 +6,23 @@ import com.hlebon.session.SessionModalDto;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class SessionServiceImpl implements SessionService {
 
-    private SessionDao subjectDao = new SessionDao();
+    private SessionDao sessionDao = new SessionDao();
     private SessionMapper sessionMapper = Mappers.getMapper(SessionMapper.class);
 
     @Override
     public List<SessionModalDto> getAll() {
-        List<SessionEntity> sessionEntities = subjectDao.getAll();
+        List<SessionEntity> sessionEntities = sessionDao.getAll();
+        return convertList(sessionEntities);
+    }
+
+    @Override
+    public Collection<SessionModalDto> getBySetOfGroup(long id) {
+        Collection<SessionEntity> sessionEntities = sessionDao.getBySetOfGroup(id);
         return convertList(sessionEntities);
     }
 
@@ -23,21 +30,21 @@ public class SessionServiceImpl implements SessionService {
     public void add(SessionModalDto sessionModalDto) {
         SessionEntity sessionEntity = sessionMapper.destinationToSource(sessionModalDto);
         sessionEntity.setId(null);
-        subjectDao.save(sessionEntity);
+        sessionDao.save(sessionEntity);
     }
 
     @Override
     public void update(SessionModalDto sessionModalDto) {
         SessionEntity sessionEntity = sessionMapper.destinationToSource(sessionModalDto);
-        subjectDao.update(sessionEntity);
+        sessionDao.update(sessionEntity);
     }
 
     @Override
     public void delete(SessionModalDto sessionModalDto) {
-        subjectDao.delete(sessionModalDto.getId());
+        sessionDao.delete(sessionModalDto.getId());
     }
 
-    private List<SessionModalDto> convertList(List<SessionEntity> sessionEntities) {
+    private List<SessionModalDto> convertList(Collection<SessionEntity> sessionEntities) {
         List<SessionModalDto> result = new ArrayList<>();
         for (SessionEntity sessionEntity : sessionEntities) {
             SessionModalDto destination = sessionMapper.sourceToDestination(sessionEntity);

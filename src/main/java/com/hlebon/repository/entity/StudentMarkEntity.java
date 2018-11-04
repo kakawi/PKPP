@@ -12,19 +12,22 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "department")
+@Table(name = "student_mark")
 @Getter
 @Setter
-public class DepartmentEntity {
+public class StudentMarkEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "departmentGenerator")
-    @SequenceGenerator(name = "departmentGenerator", sequenceName = "department_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "studentMarkGenerator")
+    @SequenceGenerator(name = "studentMarkGenerator", sequenceName = "student_mark_id_seq", allocationSize = 1)
     private Long id;
 
-    private String name;
+    private int mark;
 
     @ManyToOne
-    private FacultyEntity faculty;
+    private StudentEntity student;
+
+    @ManyToOne
+    private ScheduleEntity schedule;
 
 }

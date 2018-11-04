@@ -15,4 +15,6 @@ public interface ScheduleService {
     void update(ScheduleModalDto faculty);
 
     void delete(ScheduleModalDto faculty);
+
+    ScheduleModalDto getBySessionAndSetOfGroupAndSubject(long sessionId, long setOfGroupId, long subjectId);
 }

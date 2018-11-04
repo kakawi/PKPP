@@ -2,6 +2,7 @@ package com.hlebon.service.session;
 
 import com.hlebon.session.SessionModalDto;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface SessionService {
@@ -13,4 +14,6 @@ public interface SessionService {
     void update(SessionModalDto sessionModalDto);
 
     void delete(SessionModalDto sessionModalDto);
+
+    Collection<SessionModalDto> getBySetOfGroup(long id);
 }

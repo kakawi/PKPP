@@ -8,6 +8,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class ScheduleModalDto {
+
     private ObjectProperty<Long> id = new SimpleObjectProperty<>(null);
 
     private SimpleStringProperty setOfGroupName = new SimpleStringProperty();

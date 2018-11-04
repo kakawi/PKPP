@@ -6,6 +6,7 @@ import com.hlebon.subject.SubjectModalDto;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class SubjectServiceImpl implements SubjectService {
@@ -37,7 +38,13 @@ public class SubjectServiceImpl implements SubjectService {
         subjectDao.delete(subjectModalDto.getId());
     }
 
-    private List<SubjectModalDto> convertList(List<SubjectEntity> subjectEntities) {
+    @Override
+    public Collection<SubjectModalDto> getBySessionAndSetOfGroup(long sessionId, long setOfGroupId) {
+        Collection<SubjectEntity> subjectEntities = subjectDao.getBySessionAndSetOfGroup(sessionId, setOfGroupId);
+        return convertList(subjectEntities);
+    }
+
+    private List<SubjectModalDto> convertList(Collection<SubjectEntity> subjectEntities) {
         List<SubjectModalDto> result = new ArrayList<>();
         for (SubjectEntity subjectEntity : subjectEntities) {
             SubjectModalDto destination = subjectMapper.sourceToDestination(subjectEntity);

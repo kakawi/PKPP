@@ -5,6 +5,7 @@ import com.hlebon.repository.exception.DaoException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import static com.hlebon.Main.ENTITY_MANAGER_FACTORY;
 public class SessionDao {
 
     public List<SessionEntity> getAll() {
-        List<SessionEntity> faculties = Collections.emptyList();
+        List<SessionEntity> sessions = Collections.emptyList();
 
         EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
         EntityTransaction transaction = null;
@@ -22,7 +23,7 @@ public class SessionDao {
             transaction = manager.getTransaction();
             transaction.begin();
 
-            faculties = manager
+            sessions = manager
                     .createQuery("SELECT s FROM SessionEntity s", SessionEntity.class)
                     .getResultList();
 
@@ -36,7 +37,7 @@ public class SessionDao {
             manager.close();
         }
 
-        return faculties;
+        return sessions;
     }
 
     public void save(SessionEntity sessionEntity) {
@@ -103,5 +104,37 @@ public class SessionDao {
         }
     }
 
+
+    public Collection<SessionEntity> getBySetOfGroup(long setOfGroupId) {
+        List<SessionEntity> sessions = Collections.emptyList();
+
+        EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
+        EntityTransaction transaction = null;
+
+        try {
+            transaction = manager.getTransaction();
+            transaction.begin();
+
+            sessions = manager
+                    .createQuery("SELECT distinct s FROM SessionEntity s " +
+                            " join s.schedules sch" +
+                            " join sch.setOfGroup setOfGroup" +
+                            " where setOfGroup.id = :setOfGroupId" +
+                            " and s.isFinished = false", SessionEntity.class)
+                    .setParameter("setOfGroupId", setOfGroupId)
+                    .getResultList();
+
+            transaction.commit();
+        } catch (Exception ex) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            throw new DaoException(ex);
+        } finally {
+            manager.close();
+        }
+
+        return sessions;
+    }
 
 }

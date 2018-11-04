@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlebon.studentMark.StudentMarkController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#actionButtonPressed" text="Добавить" />
+            <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#actionButtonPressed" text="Редактировать" />
+            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#actionButtonPressed" text="Удалить" />
+         </children>
+      </HBox>
+      <TableView fx:id="tableStudentMarks" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="columnId" prefWidth="143.0" text="ID" />
+          <TableColumn fx:id="columnStudentFullName" prefWidth="455.0" text="ФИО студента" />
+            <TableColumn fx:id="columnScheduleName" prefWidth="75.0" text="Расписание" />
+            <TableColumn fx:id="columnMark" prefWidth="75.0" text="Оценка" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</VBox>

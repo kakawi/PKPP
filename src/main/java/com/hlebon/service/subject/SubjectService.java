@@ -2,6 +2,7 @@ package com.hlebon.service.subject;
 
 import com.hlebon.subject.SubjectModalDto;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface SubjectService {
@@ -13,4 +14,6 @@ public interface SubjectService {
     void update(SubjectModalDto subjectModalDto);
 
     void delete(SubjectModalDto subjectModalDto);
+
+    Collection<SubjectModalDto> getBySessionAndSetOfGroup(long sessionId, long setOfGroupId);
 }

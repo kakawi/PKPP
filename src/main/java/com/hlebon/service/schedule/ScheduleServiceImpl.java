@@ -6,6 +6,7 @@ import com.hlebon.repository.entity.ScheduleEntity;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class ScheduleServiceImpl implements ScheduleService {
@@ -43,7 +44,13 @@ public class ScheduleServiceImpl implements ScheduleService {
         scheduleDao.delete(schedule.getId());
     }
 
-    private List<ScheduleModalDto> convertList(List<ScheduleEntity> scheduleEntities) {
+    @Override
+    public ScheduleModalDto getBySessionAndSetOfGroupAndSubject(long sessionId, long setOfGroupId, long subjectId) {
+        ScheduleEntity scheduleEntity = scheduleDao.getBySessionAndSetOfGroupAndSubject(sessionId, setOfGroupId, subjectId);
+        return scheduleMapper.sourceToDestination(scheduleEntity);
+    }
+
+    private List<ScheduleModalDto> convertList(Collection<ScheduleEntity> scheduleEntities) {
         List<ScheduleModalDto> result = new ArrayList<>();
         for (ScheduleEntity scheduleEntity : scheduleEntities) {
             ScheduleModalDto destination = scheduleMapper.sourceToDestination(scheduleEntity);

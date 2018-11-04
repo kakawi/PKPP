@@ -37,6 +37,7 @@
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Button mnemonicParsing="false" onAction="#showSchedule" text="Расписание" />
+            <Button mnemonicParsing="false" onAction="#showStudentMarks" text="Оценки" />
          </children>
       </HBox>
    </children>

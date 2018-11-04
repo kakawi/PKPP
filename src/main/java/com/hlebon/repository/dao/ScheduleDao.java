@@ -131,4 +131,24 @@ public class ScheduleDao {
         }
     }
 
+    public ScheduleEntity getBySessionAndSetOfGroupAndSubject(long sessionId, long setOfGroupId, long subjectId) {
+        EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
+
+        try {
+            return manager
+                    .createQuery("SELECT s FROM ScheduleEntity s" +
+                            " where s.session.id = :session" +
+                            " and s.setOfGroup.id = :setOfGroupId" +
+                            " and s.subject.id = :subjectId", ScheduleEntity.class)
+                    .setParameter("session", sessionId)
+                    .setParameter("setOfGroupId", setOfGroupId)
+                    .setParameter("subjectId", subjectId)
+                    .getSingleResult();
+
+        } catch (Exception ex) {
+            throw new DaoException(ex);
+        } finally {
+            manager.close();
+        }
+    }
 }

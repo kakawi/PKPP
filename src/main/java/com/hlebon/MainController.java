@@ -167,4 +167,21 @@ public class MainController {
         }
     }
 
+    public void showStudentMarks(ActionEvent actionEvent) {
+        try {
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("studentMark/studentMarks.fxml"));
+            stage.setTitle("Студенты");
+            stage.setMinHeight(200);
+            stage.setMinWidth(MIN_WIDTH);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
