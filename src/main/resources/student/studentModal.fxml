@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hlebon.student.StudentModalController">
+    <children>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Label text="ID"/>
+                <Label text="Фамилия" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtId" disable="true" editable="false" GridPane.columnIndex="1"/>
+                <TextField fx:id="txtLastName" promptText="Фамилия" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label text="Группа" GridPane.rowIndex="10"/>
+                <ChoiceBox fx:id="groupsChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+                <Label text="Имя" GridPane.rowIndex="3"/>
+                <Label text="Отчество" GridPane.rowIndex="4"/>
+                <Label text="№ Зачетной книжки" GridPane.rowIndex="5"/>
+                <Label text="Временная прописка" GridPane.rowIndex="6"/>
+                <Label text="Стипендия" GridPane.rowIndex="7"/>
+                <Label text="Надбавка стипендии" GridPane.rowIndex="8"/>
+                <Label text="Местный" GridPane.rowIndex="9"/>
+                <TextField fx:id="txtFirstName" layoutX="310.0" layoutY="43.0" promptText="Имя" GridPane.columnIndex="1"
+                           GridPane.rowIndex="3"/>
+                <TextField fx:id="txtMiddleName" promptText="Отчество" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="txtRecordBook" promptText="№ Зачетной книжки" GridPane.columnIndex="1"
+                           GridPane.rowIndex="5"/>
+                <TextField fx:id="txtAddressOfPermanentResidence" promptText="Прописка" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <TextField fx:id="txtAddressOfResidence" promptText="Постоянный адрес" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <CheckBox fx:id="bIsLocal" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+                <CheckBox fx:id="bIsGetScholarship" mnemonicParsing="false" GridPane.columnIndex="1"
+                          GridPane.rowIndex="7"/>
+                <TextField fx:id="txtPremium" promptText="Надбавка" text="0" GridPane.columnIndex="1"
+                           GridPane.rowIndex="8"/>
+            </children>
+        </GridPane>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="btnSave" defaultButton="true" mnemonicParsing="false" onAction="#actionSave"
+                        text="Сохранить"/>
+                <Button fx:id="btnCancel" cancelButton="true" mnemonicParsing="false" onAction="#actionCancel"
+                        text="Отмена"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>
