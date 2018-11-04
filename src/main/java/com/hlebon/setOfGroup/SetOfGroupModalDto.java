@@ -55,4 +55,8 @@ public class SetOfGroupModalDto {
         this.id.set(id);
     }
 
+    public String getSetOfGroupName() {
+        return speciality.get().getName() + " - " + year.get();
+    }
+
 }

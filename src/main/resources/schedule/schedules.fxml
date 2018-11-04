@@ -7,7 +7,7 @@
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.hlebon.department.DepartmentsController">
+      fx:controller="com.hlebon.schedule.SchedulesController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -19,8 +19,9 @@
       <TableView fx:id="tableDepartments" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="columnId" prefWidth="143.0" text="ID" />
-          <TableColumn fx:id="columnName" prefWidth="455.0" text="Название" />
-            <TableColumn fx:id="columnFacultyName" prefWidth="75.0" text="Название Факультета" />
+          <TableColumn fx:id="columnSetOfGroupName" prefWidth="455.0" text="Набор" />
+            <TableColumn fx:id="columnSessionName" prefWidth="75.0" text="Сессия" />
+            <TableColumn fx:id="columnSubjectName" prefWidth="75.0" text="Предмет" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

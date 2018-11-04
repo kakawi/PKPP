@@ -34,5 +34,10 @@
             <Button mnemonicParsing="false" onAction="#showStudents" text="Студенты" />
          </children>
       </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#showSchedule" text="Расписание" />
+         </children>
+      </HBox>
    </children>
 </VBox>
