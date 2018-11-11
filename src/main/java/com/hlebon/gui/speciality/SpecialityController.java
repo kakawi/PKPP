@@ -95,7 +95,7 @@ public class SpecialityController implements Initializable {
 
         switch (clickedButton.getId()) {
             case "btnAdd": {
-                specialityModalController.setDepartment(new SpecialityModalDto(), departmentService.getAll());
+                specialityModalController.setDependencies(departmentService.getAll());
                 showDialog();
                 Optional<SpecialityModalDto> optional = specialityModalController.getDepartment();
                 if (optional.isPresent()) {
@@ -129,7 +129,7 @@ public class SpecialityController implements Initializable {
         if (!departmentIsSelected(selectedFaculty)) {
             return;
         }
-        specialityModalController.setDepartment(selectedFaculty, departmentService.getAll());
+        specialityModalController.setDepartmentAndDependencies(selectedFaculty, departmentService.getAll());
         showDialog();
         Optional<SpecialityModalDto> optional = specialityModalController.getDepartment();
         if (optional.isPresent()) {

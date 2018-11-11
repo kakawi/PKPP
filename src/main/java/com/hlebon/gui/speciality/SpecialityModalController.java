@@ -58,17 +58,22 @@ public class SpecialityModalController {
         return true;
     }
 
-    public void setDepartment(SpecialityModalDto department, List<DepartmentModalDto> departmentModalDtos) {
-        this.specialityModalDto = department;
+    public void setDepartmentAndDependencies(SpecialityModalDto specialityModalDto, List<DepartmentModalDto> departmentModalDtos) {
+        setDependencies(departmentModalDtos);
+        this.specialityModalDto = specialityModalDto;
+        departmentsChoiseBox.getSelectionModel().select(specialityModalDto.getDepartment().getName());
+        txtId.setText(String.valueOf(specialityModalDto.getId()));
+        txtName.setText(specialityModalDto.getName());
+    }
+
+    public void setDependencies(List<DepartmentModalDto> departmentModalDtos) {
+        this.specialityModalDto = new SpecialityModalDto();
         departmentsChoiseBox.getItems().clear();
         for (DepartmentModalDto departmentModalDto : departmentModalDtos) {
             String departmentName = departmentModalDto.getName();
             departmentModalDtoMap.put(departmentName, departmentModalDto);
             departmentsChoiseBox.getItems().add(departmentName);
         }
-        departmentsChoiseBox.getSelectionModel().select(department.getDepartment().getName());
-        txtId.setText(String.valueOf(department.getId()));
-        txtName.setText(department.getName());
     }
 
     public Optional<SpecialityModalDto> getDepartment() {
