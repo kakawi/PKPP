@@ -52,6 +52,10 @@ public class StudentModalController {
         stage.hide();
     }
 
+    public void addStage(Stage stage) {
+        stage.setOnCloseRequest(we -> clearModalDto());
+    }
+
     public void actionSave(ActionEvent actionEvent) {
         if (!checkValues()) {
             return;
@@ -124,7 +128,12 @@ public class StudentModalController {
     }
 
     public void actionCancel(ActionEvent actionEvent) {
-        studentModalDto = null;
+        clearModalDto();
         actionClose(actionEvent);
     }
+
+    private void clearModalDto() {
+        studentModalDto = null;
+    }
+
 }

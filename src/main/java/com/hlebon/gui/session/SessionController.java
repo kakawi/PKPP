@@ -177,7 +177,8 @@ public class SessionController implements Initializable {
             modalDialogStage.initModality(Modality.WINDOW_MODAL);
             modalDialogStage.initOwner(mainStage);
         }
+        sessionModalController.addStage(modalDialogStage);
         modalDialogStage.showAndWait(); // для ожидания закрытия окна
-
     }
+
 }

@@ -169,7 +169,8 @@ public class SubjectsController implements Initializable {
             modalDialogStage.initModality(Modality.WINDOW_MODAL);
             modalDialogStage.initOwner(mainStage);
         }
-        modalDialogStage.showAndWait(); // для ожидания закрытия окна
-
+        subjectModalController.addStage(modalDialogStage);
+        modalDialogStage.showAndWait();
     }
+
 }

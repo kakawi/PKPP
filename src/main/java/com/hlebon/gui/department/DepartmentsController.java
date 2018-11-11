@@ -175,7 +175,8 @@ public class DepartmentsController implements Initializable {
             modalDialogStage.initModality(Modality.WINDOW_MODAL);
             modalDialogStage.initOwner(mainStage);
         }
-        modalDialogStage.showAndWait(); // для ожидания закрытия окна
-
+        departmentModalController.addStage(modalDialogStage);
+        modalDialogStage.showAndWait();
     }
+
 }

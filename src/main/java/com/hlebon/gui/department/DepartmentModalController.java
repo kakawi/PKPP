@@ -35,6 +35,9 @@ public class DepartmentModalController {
         stage.hide();
     }
 
+    public void addStage(Stage stage) {
+        stage.setOnCloseRequest(we -> clearModalDto());
+    }
 
     public void actionSave(ActionEvent actionEvent) {
         if (!checkValues()) {
@@ -86,7 +89,11 @@ public class DepartmentModalController {
     }
 
     public void actionCancel(ActionEvent actionEvent) {
-        departmentModalDto = null;
+        clearModalDto();
         actionClose(actionEvent);
+    }
+
+    private void clearModalDto() {
+        departmentModalDto = null;
     }
 }

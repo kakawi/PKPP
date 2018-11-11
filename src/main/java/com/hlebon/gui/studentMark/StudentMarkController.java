@@ -216,7 +216,8 @@ public class StudentMarkController implements Initializable {
             modalDialogStage.initModality(Modality.WINDOW_MODAL);
             modalDialogStage.initOwner(mainStage);
         }
-        modalDialogStage.showAndWait(); // для ожидания закрытия окна
-
+        studentMarkModalController.addStage(modalDialogStage);
+        modalDialogStage.showAndWait();
     }
+
 }

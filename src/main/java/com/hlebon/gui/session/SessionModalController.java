@@ -26,6 +26,10 @@ public class SessionModalController {
 
     private SessionModalDto sessionModalDto;
 
+    public void addStage(Stage stage) {
+        stage.setOnCloseRequest(we -> clearModalDto());
+    }
+
     private void actionClose(ActionEvent actionEvent) {
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
@@ -67,12 +71,16 @@ public class SessionModalController {
     }
 
     public void actionCancel(ActionEvent actionEvent) {
-        sessionModalDto = null;
+        clearModalDto();
         actionClose(actionEvent);
     }
 
     public void setDependencies() {
         this.sessionModalDto = new SessionModalDto();
+    }
+
+    private void clearModalDto() {
+        sessionModalDto = null;
     }
 
 }

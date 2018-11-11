@@ -176,7 +176,8 @@ public class GroupController implements Initializable {
             modalDialogStage.initModality(Modality.WINDOW_MODAL);
             modalDialogStage.initOwner(mainStage);
         }
-        modalDialogStage.showAndWait(); // для ожидания закрытия окна
-
+        groupModalController.addStage(modalDialogStage);
+        modalDialogStage.showAndWait();
     }
+
 }

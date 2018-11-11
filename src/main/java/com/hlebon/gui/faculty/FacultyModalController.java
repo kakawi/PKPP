@@ -25,6 +25,9 @@ public class FacultyModalController {
         stage.hide();
     }
 
+    public void addStage(Stage stage) {
+        stage.setOnCloseRequest(we -> clearModalDto());
+    }
 
     public void actionSave(ActionEvent actionEvent) {
         if (!checkValues()) {
@@ -54,7 +57,12 @@ public class FacultyModalController {
     }
 
     public void actionCancel(ActionEvent actionEvent) {
-        faculty = null;
+        clearModalDto();
         actionClose(actionEvent);
     }
+
+    private void clearModalDto() {
+        faculty = null;
+    }
+
 }

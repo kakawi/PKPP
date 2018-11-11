@@ -193,7 +193,8 @@ public class SchedulesController implements Initializable {
             modalDialogStage.initModality(Modality.WINDOW_MODAL);
             modalDialogStage.initOwner(mainStage);
         }
-        modalDialogStage.showAndWait(); // для ожидания закрытия окна
-
+        scheduleModalController.addStage(modalDialogStage);
+        modalDialogStage.showAndWait();
     }
+
 }

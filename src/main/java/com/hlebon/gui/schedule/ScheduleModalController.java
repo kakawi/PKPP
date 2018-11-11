@@ -42,6 +42,9 @@ public class ScheduleModalController {
         stage.hide();
     }
 
+    public void addStage(Stage stage) {
+        stage.setOnCloseRequest(we -> clearModalDto());
+    }
 
     public void actionSave(ActionEvent actionEvent) {
         if (!checkValues()) {
@@ -130,7 +133,12 @@ public class ScheduleModalController {
     }
 
     public void actionCancel(ActionEvent actionEvent) {
-        scheduleModalDto = null;
+        clearModalDto();
         actionClose(actionEvent);
     }
+
+    private void clearModalDto() {
+        scheduleModalDto = null;
+    }
+
 }

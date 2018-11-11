@@ -150,7 +150,8 @@ public class FacultiesController implements Initializable {
             modalDialogStage.initModality(Modality.WINDOW_MODAL);
             modalDialogStage.initOwner(mainStage);
         }
-        modalDialogStage.showAndWait(); // для ожидания закрытия окна
-
+        facultyModalController.addStage(modalDialogStage);
+        modalDialogStage.showAndWait();
     }
+
 }

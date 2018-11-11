@@ -210,6 +210,10 @@ public class StudentMarkModalController implements Initializable {
         stage.hide();
     }
 
+    public void addStage(Stage stage) {
+        stage.setOnCloseRequest(we -> clearModalDto());
+    }
+
     public void actionSave(ActionEvent actionEvent) {
         if (!checkValues()) {
             return;
@@ -405,8 +409,12 @@ public class StudentMarkModalController implements Initializable {
     }
 
     public void actionCancel(ActionEvent actionEvent) {
-        studentMarkModalDto = null;
+        clearModalDto();
         actionClose(actionEvent);
+    }
+
+    private void clearModalDto() {
+        studentMarkModalDto = null;
     }
 
     @FunctionalInterface

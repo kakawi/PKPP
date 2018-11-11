@@ -35,6 +35,9 @@ public class SpecialityModalController {
         stage.hide();
     }
 
+    public void addStage(Stage stage) {
+        stage.setOnCloseRequest(we -> clearModalDto());
+    }
 
     public void actionSave(ActionEvent actionEvent) {
         if (!checkValues()) {
@@ -73,7 +76,12 @@ public class SpecialityModalController {
     }
 
     public void actionCancel(ActionEvent actionEvent) {
-        specialityModalDto = null;
+        clearModalDto();
         actionClose(actionEvent);
     }
+
+    private void clearModalDto() {
+        specialityModalDto = null;
+    }
+
 }

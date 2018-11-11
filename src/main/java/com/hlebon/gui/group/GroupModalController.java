@@ -35,6 +35,9 @@ public class GroupModalController {
         stage.hide();
     }
 
+    public void addStage(Stage stage) {
+        stage.setOnCloseRequest(we -> clearModalDto());
+    }
 
     public void actionSave(ActionEvent actionEvent) {
         if (!checkValues()) {
@@ -90,7 +93,12 @@ public class GroupModalController {
     }
 
     public void actionCancel(ActionEvent actionEvent) {
-        groupModalDto = null;
+        clearModalDto();
         actionClose(actionEvent);
     }
+
+    private void clearModalDto() {
+        groupModalDto = null;
+    }
+
 }
