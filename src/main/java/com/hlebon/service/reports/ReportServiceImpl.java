@@ -3,7 +3,7 @@ package com.hlebon.service.reports;
 import com.hlebon.gui.reports.AverageMarkBySubjectDto;
 import com.hlebon.gui.reports.CountSubjectsInSessionDto;
 import com.hlebon.repository.dao.ReportDao;
-import com.hlebon.repository.entity.AverageMarkBySubjectForSessionEntity;
+import com.hlebon.repository.entity.report.AverageMarkBySubjectForSessionEntity;
 import com.hlebon.repository.entity.report.CountSubjectsInSessionEntity;
 import org.mapstruct.factory.Mappers;
 

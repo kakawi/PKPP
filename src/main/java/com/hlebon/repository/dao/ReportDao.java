@@ -1,6 +1,6 @@
 package com.hlebon.repository.dao;
 
-import com.hlebon.repository.entity.AverageMarkBySubjectForSessionEntity;
+import com.hlebon.repository.entity.report.AverageMarkBySubjectForSessionEntity;
 import com.hlebon.repository.entity.report.CountSubjectsInSessionEntity;
 import com.hlebon.repository.exception.DaoException;
 
@@ -38,7 +38,7 @@ public class ReportDao {
             transaction.begin();
 
             result = manager
-                    .createQuery("SELECT new com.hlebon.repository.entity.AverageMarkBySubjectForSessionEntity(sub.name, avg(m.mark)) " +
+                    .createQuery("SELECT new com.hlebon.repository.entity.report.AverageMarkBySubjectForSessionEntity(sub.name, avg(m.mark)) " +
                             "FROM StudentMarkEntity m " +
                             "join m.schedule sch " +
                             "join sch.subject sub " +

@@ -1,4 +1,4 @@
-package com.hlebon.repository.entity;
+package com.hlebon.repository.entity.report;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

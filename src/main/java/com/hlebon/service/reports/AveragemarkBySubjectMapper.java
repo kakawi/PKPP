@@ -1,7 +1,7 @@
 package com.hlebon.service.reports;
 
 import com.hlebon.gui.reports.AverageMarkBySubjectDto;
-import com.hlebon.repository.entity.AverageMarkBySubjectForSessionEntity;
+import com.hlebon.repository.entity.report.AverageMarkBySubjectForSessionEntity;
 import org.mapstruct.Mapper;
 
 @Mapper
