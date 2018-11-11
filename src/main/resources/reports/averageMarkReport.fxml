@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hlebon.gui.reports.AverageMarkBySubjectController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Сессия" />
+            <ChoiceBox fx:id="sessionsChoiceBox" prefWidth="150.0" />
+            <Button fx:id="btnOK" mnemonicParsing="false" onAction="#actionButtonOkPressed" text="Button" />
+         </children>
+      </HBox>
+      <TableView fx:id="tableAverageMarkBySubject" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="columnSubjectName" prefWidth="381.0" text="Предмет" />
+          <TableColumn fx:id="columnAverageMark" prefWidth="215.0" text="Средняя оценка" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

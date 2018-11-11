@@ -40,5 +40,11 @@
             <Button mnemonicParsing="false" onAction="#showStudentMarks" text="Оценки" />
          </children>
       </HBox>
+
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#showReports" text="Отчеты" />
+         </children>
+      </HBox>
    </children>
 </VBox>
