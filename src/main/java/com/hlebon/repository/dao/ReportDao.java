@@ -1,10 +1,12 @@
 package com.hlebon.repository.dao;
 
 import com.hlebon.repository.entity.AverageMarkBySubjectForSessionEntity;
+import com.hlebon.repository.entity.report.CountSubjectsInSessionEntity;
 import com.hlebon.repository.exception.DaoException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -55,6 +57,23 @@ public class ReportDao {
         }
 
         return result;
+    }
+
+    public Collection<CountSubjectsInSessionEntity> getCountSubjectsInSession() {
+        EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
+        try {
+            return manager
+                    .createQuery("SELECT new com.hlebon.repository.entity.report.CountSubjectsInSessionEntity(ses.name, ses.year, count(sub.id)) " +
+                            "FROM SessionEntity ses " +
+                            "left join ses.schedules sch " +
+                            "left join sch.subject sub " +
+                            "group by ses.id", CountSubjectsInSessionEntity.class)
+                    .getResultList();
+        } catch (Exception ex) {
+            throw new DaoException(ex);
+        } finally {
+            manager.close();
+        }
     }
 
 }

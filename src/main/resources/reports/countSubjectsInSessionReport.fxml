@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.hlebon.gui.reports.CountSubjectsInSessionController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#actionButtonRefreshPressed" text="Обновить" />
+         </children>
+      </HBox>
+      <TableView fx:id="tableCountSubjectsInSession" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="columnSessionName" prefWidth="172.0" text="Сессия" />
+            <TableColumn fx:id="columnSessionYear" prefWidth="123.0" text="Год" />
+          <TableColumn fx:id="columnCountSubjects" prefWidth="376.0" text="Количество экзаменов" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>
