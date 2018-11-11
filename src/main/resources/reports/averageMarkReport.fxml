@@ -10,7 +10,7 @@
          <children>
             <Label text="Сессия" />
             <ChoiceBox fx:id="sessionsChoiceBox" prefWidth="150.0" />
-            <Button fx:id="btnOK" mnemonicParsing="false" onAction="#actionButtonOkPressed" text="Button" />
+            <Button fx:id="btnOK" mnemonicParsing="false" onAction="#actionButtonOkPressed" text="Найти" />
          </children>
       </HBox>
       <TableView fx:id="tableAverageMarkBySubject" prefHeight="200.0" prefWidth="200.0">
