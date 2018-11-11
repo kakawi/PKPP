@@ -27,7 +27,7 @@ public class SessionEntity {
     private String name;
 
     @Column(name = "year_of_session")
-    private int yearOfSession;
+    private int year;
 
     @Column(name = "is_finished")
     private boolean isFinished;
